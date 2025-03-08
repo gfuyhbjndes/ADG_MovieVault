@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column  ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 0;
+  padding: 0;
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  height: 60px;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  width: 250px;
+  background-color: rgb(51, 51, 51);
+  color: blanchedalmond;
+  position: fixed; /* Keeps sidebar fixed */
+  top: 60px; /* Pushes it below header */
+  left: 0;
+  height: calc(100vh - 60px); /* Adjusts height */
+  overflow: hidden; /* Enables scrolling if content is too big */
+}
+
+.inner{
+  display: inline-block;
+}
+
+
+
+
+.navList{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+}
+.row{
+  width: 90%;
+  padding: 15px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+.nav-link {
+  display: block;
+  width: 80%;
+  margin: 5px auto;
+  padding: 10px;
+  text-decoration: none; /* Removes underline */
+  color: white; /* White text */
+  font-size: 18px;
+  background-color: #444; /* Dark gray background */
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #666;
+  color: white !important; /* Ensures text stays white */
+  transform: scale(1.05);
+}
+
+.nav-link.active {
+  background-color: #ff6347;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+.logo{
+  width: 50px;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo img {
+  height: 40px;
+  width: 40px;
+  
 }
+
+.title{
+  color: white;
+  font-size: x-large;
+}
+
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-button {
+  background-color: green;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+  width: 45px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.main-content{
+  margin-left: 250px; /* Moves content to right of sidebar */
+  margin-top: 60px; /* Pushes it below header */
+  padding: 20px;
+  background-color: rgb(31, 31, 31);
+}
+
+.card-img-top{
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.col .card .info-container {
+  display: flex;
+  align-items: center; /* Aligns them vertically */
+  justify-content: space-between; /* Space between button and rating */
+  width: 100%;
+  padding: 10px;
+}
+
+.col .card .btn {
+  width: auto; /* Adjusts width based on content */
+  margin: 0; /* Removes unnecessary margin */
+  display: flex;
+  
+}
+
+.col .card .rating {
+  width: auto; /* Allows rating text to adjust */
+  display: flex;
+  color: goldenrod; /* Ensures rating is visible */
+  margin-left: auto;
+}
+
+.text-overflow-2{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-overflow-1{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} 
+
